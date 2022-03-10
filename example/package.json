@@ -6,9 +6,9 @@
   "private": true,
   "dependencies": {
     "react": "link:../node_modules/react",
+    "react-cbridge": "link:..",
     "react-dom": "^16.9.0",
-    "react-scripts": "^3.0.1",
-    "react-cbridge": "link:.."
+    "react-scripts": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
