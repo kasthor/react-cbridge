@@ -105299,6 +105299,7 @@ var useCBridge = function () {
         });
     }); };
     return {
+        getCurrentAccount: getCurrentAccount,
         estimateAmount: estimateAmount,
         transferConfigs: transferConfigs,
         transferAmount: transferAmount,

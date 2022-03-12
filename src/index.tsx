@@ -271,6 +271,7 @@ export const useCBridge = () => {
   };
 
   return {
+    getCurrentAccount,
     estimateAmount,
     transferConfigs,
     transferAmount,
