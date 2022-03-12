@@ -149,7 +149,7 @@ export const useCBridge = () => {
   };
 
   const ensureInChain = async (id: number) => {
-    const currentChainId = await getCurrentChainId();
+    const currentChainId = parseInt(await getCurrentChainId());
     const ethereum = window["ethereum"];
 
     if (currentChainId !== id) {
@@ -178,7 +178,7 @@ export const useCBridge = () => {
   };
 
   const isInRightChain = async ({ sourceChainId }: TransferRequest) =>
-    (await getCurrentChainId()) === sourceChainId;
+    parseInt(await getCurrentChainId()) === sourceChainId;
 
   const ensureInRightChain = async ({ sourceChainId }: TransferRequest) =>
     ensureInChain(sourceChainId);
