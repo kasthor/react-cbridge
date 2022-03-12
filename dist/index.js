@@ -105113,17 +105113,19 @@ var useCBridge = function () {
         });
     }); };
     var ensureInChain = function (id) { return __awaiter$9(void 0, void 0, void 0, function () {
-        var currentChainId, ethereum, config;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, getCurrentChainId()];
+        var currentChainId, _a, ethereum, config;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    _a = parseInt;
+                    return [4 /*yield*/, getCurrentChainId()];
                 case 1:
-                    currentChainId = _a.sent();
+                    currentChainId = _a.apply(void 0, [_b.sent()]);
                     ethereum = window["ethereum"];
                     if (!(currentChainId !== id)) return [3 /*break*/, 3];
                     return [4 /*yield*/, getChainConfig(id)];
                 case 2:
-                    config = _a.sent();
+                    config = _b.sent();
                     return [2 /*return*/, (config &&
                             ethereum.request({
                                 method: "wallet_addEthereumChain",
@@ -105147,10 +105149,12 @@ var useCBridge = function () {
     }); };
     var isInRightChain = function (_a) {
         var sourceChainId = _a.sourceChainId;
-        return __awaiter$9(void 0, void 0, void 0, function () { return __generator(this, function (_b) {
-            switch (_b.label) {
-                case 0: return [4 /*yield*/, getCurrentChainId()];
-                case 1: return [2 /*return*/, (_b.sent()) === sourceChainId];
+        return __awaiter$9(void 0, void 0, void 0, function () { var _b; return __generator(this, function (_c) {
+            switch (_c.label) {
+                case 0:
+                    _b = parseInt;
+                    return [4 /*yield*/, getCurrentChainId()];
+                case 1: return [2 /*return*/, _b.apply(void 0, [_c.sent()]) === sourceChainId];
             }
         }); });
     };
