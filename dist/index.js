@@ -87750,7 +87750,7 @@ var bn = createCommonjsModule$1(function (module) {
 })(module, commonjsGlobal);
 });
 
-const version$i = "logger/5.5.0";
+const version$j = "logger/5.5.0";
 
 let _permanentCensorErrors = false;
 let _censorErrors = false;
@@ -88026,7 +88026,7 @@ class Logger {
     }
     static globalLogger() {
         if (!_globalLogger) {
-            _globalLogger = new Logger(version$i);
+            _globalLogger = new Logger(version$j);
         }
         return _globalLogger;
     }
@@ -88062,9 +88062,9 @@ class Logger {
 Logger.errors = ErrorCode;
 Logger.levels = LogLevel;
 
-const version$h = "bytes/5.5.0";
+const version$i = "bytes/5.5.0";
 
-const logger$p = new Logger(version$h);
+const logger$p = new Logger(version$i);
 ///////////////////////////////
 function isHexable(value) {
     return !!(value.toHexString);
@@ -88449,10 +88449,10 @@ function splitSignature(signature) {
     return result;
 }
 
-const version$g = "bignumber/5.5.0";
+const version$h = "bignumber/5.5.0";
 
 var BN = bn.BN;
-const logger$o = new Logger(version$g);
+const logger$o = new Logger(version$h);
 const _constructorGuard$3 = {};
 const MAX_SAFE = 0x1fffffffffffff;
 function isBigNumberish(value) {
@@ -88741,7 +88741,7 @@ function _base36To16(value) {
     return (new BN(value, 36)).toString(16);
 }
 
-const logger$n = new Logger(version$g);
+const logger$n = new Logger(version$h);
 const _constructorGuard$2 = {};
 const Zero$2 = BigNumber.from(0);
 const NegativeOne$2 = BigNumber.from(-1);
@@ -89096,7 +89096,7 @@ class FixedNumber {
 const ONE = FixedNumber.from(1);
 const BUMP = FixedNumber.from("0.5");
 
-const version$f = "properties/5.5.0";
+const version$g = "properties/5.5.0";
 
 var __awaiter$8 = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -89107,7 +89107,7 @@ var __awaiter$8 = (undefined && undefined.__awaiter) || function (thisArg, _argu
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const logger$m = new Logger(version$f);
+const logger$m = new Logger(version$g);
 function defineReadOnly(object, name, value) {
     Object.defineProperty(object, name, {
         enumerable: true,
@@ -89221,9 +89221,9 @@ class Description {
     }
 }
 
-const version$e = "abi/5.5.0";
+const version$f = "abi/5.5.0";
 
-const logger$l = new Logger(version$e);
+const logger$l = new Logger(version$f);
 const _constructorGuard$1 = {};
 let ModifiersBytes = { calldata: true, memory: true, storage: true };
 let ModifiersNest = { calldata: true, memory: true };
@@ -90071,7 +90071,7 @@ function splitNesting(value) {
     return result;
 }
 
-const logger$k = new Logger(version$e);
+const logger$k = new Logger(version$f);
 function checkResultErrors(result) {
     // Find the first error (if any)
     const errors = [];
@@ -90870,9 +90870,9 @@ function keccak256(data) {
     return '0x' + sha3$1.keccak_256(arrayify(data));
 }
 
-const version$d = "rlp/5.5.0";
+const version$e = "rlp/5.5.0";
 
-const logger$j = new Logger(version$d);
+const logger$j = new Logger(version$e);
 function arrayifyInteger(value) {
     const result = [];
     while (value) {
@@ -90987,9 +90987,9 @@ function decode$2(data) {
     return decoded.result;
 }
 
-const version$c = "address/5.5.0";
+const version$d = "address/5.5.0";
 
-const logger$i = new Logger(version$c);
+const logger$i = new Logger(version$d);
 function getChecksumAddress(address) {
     if (!isHexString(address, 20)) {
         logger$i.throwArgumentError("invalid address", "address", address);
@@ -91129,7 +91129,7 @@ class AnonymousCoder extends Coder {
     }
 }
 
-const logger$h = new Logger(version$e);
+const logger$h = new Logger(version$f);
 function pack(writer, coders, values) {
     let arrayValues = null;
     if (Array.isArray(values)) {
@@ -91462,9 +91462,9 @@ class NumberCoder extends Coder {
     }
 }
 
-const version$b = "strings/5.5.0";
+const version$c = "strings/5.5.0";
 
-const logger$g = new Logger(version$b);
+const logger$g = new Logger(version$c);
 ///////////////////////////////
 var UnicodeNormalizationForm;
 (function (UnicodeNormalizationForm) {
@@ -91933,7 +91933,7 @@ class TupleCoder extends Coder {
     }
 }
 
-const logger$f = new Logger(version$e);
+const logger$f = new Logger(version$f);
 const paramTypeBytes = new RegExp(/^bytes([0-9]*)$/);
 const paramTypeNumber = new RegExp(/^(u?int)([0-9]*)$/);
 class AbiCoder {
@@ -92017,9 +92017,9 @@ function id(text) {
     return keccak256(toUtf8Bytes(text));
 }
 
-const version$a = "hash/5.5.0";
+const version$b = "hash/5.5.0";
 
-const logger$e = new Logger(version$a);
+const logger$e = new Logger(version$b);
 const Zeros = new Uint8Array(32);
 Zeros.fill(0);
 const Partition = new RegExp("^((.*)\\.)?([^.]+)$");
@@ -92051,7 +92051,7 @@ var __awaiter$7 = (undefined && undefined.__awaiter) || function (thisArg, _argu
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const logger$d = new Logger(version$a);
+const logger$d = new Logger(version$b);
 const padding = new Uint8Array(32);
 padding.fill(0);
 const NegativeOne = BigNumber.from(-1);
@@ -92475,7 +92475,7 @@ class TypedDataEncoder {
     }
 }
 
-const logger$c = new Logger(version$e);
+const logger$c = new Logger(version$f);
 class LogDescription extends Description {
 }
 class TransactionDescription extends Description {
@@ -93062,7 +93062,7 @@ class Interface {
     }
 }
 
-const version$9 = "abstract-provider/5.5.1";
+const version$a = "abstract-provider/5.5.1";
 
 var __awaiter$6 = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -93073,7 +93073,7 @@ var __awaiter$6 = (undefined && undefined.__awaiter) || function (thisArg, _argu
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const logger$b = new Logger(version$9);
+const logger$b = new Logger(version$a);
 //export type CallTransactionable = {
 //    call(transaction: TransactionRequest): Promise<TransactionResponse>;
 //};
@@ -93123,7 +93123,7 @@ class Provider {
     }
 }
 
-const version$8 = "abstract-signer/5.5.0";
+const version$9 = "abstract-signer/5.5.0";
 
 var __awaiter$5 = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -93134,7 +93134,7 @@ var __awaiter$5 = (undefined && undefined.__awaiter) || function (thisArg, _argu
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const logger$a = new Logger(version$8);
+const logger$a = new Logger(version$9);
 const allowedTransactionKeys$1 = [
     "accessList", "chainId", "customData", "data", "from", "gasLimit", "gasPrice", "maxFeePerGas", "maxPriorityFeePerGas", "nonce", "to", "type", "value"
 ];
@@ -97873,9 +97873,9 @@ elliptic.eddsa = /*RicMoo:ethers:require(./elliptic/eddsa)*/(null);
 
 var EC$1 = elliptic_1.ec;
 
-const version$7 = "signing-key/5.5.0";
+const version$8 = "signing-key/5.5.0";
 
-const logger$9 = new Logger(version$7);
+const logger$9 = new Logger(version$8);
 let _curve = null;
 function getCurve() {
     if (!_curve) {
@@ -97948,9 +97948,9 @@ function computePublicKey(key, compressed) {
     return logger$9.throwArgumentError("invalid public or private key", "key", "[REDACTED]");
 }
 
-const version$6 = "transactions/5.5.0";
+const version$7 = "transactions/5.5.0";
 
-const logger$8 = new Logger(version$6);
+const logger$8 = new Logger(version$7);
 var TransactionTypes;
 (function (TransactionTypes) {
     TransactionTypes[TransactionTypes["legacy"] = 0] = "legacy";
@@ -98222,7 +98222,7 @@ function parse(rawTransaction) {
     });
 }
 
-const version$5 = "contracts/5.5.0";
+const version$6 = "contracts/5.5.0";
 
 var __awaiter$4 = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -98233,7 +98233,7 @@ var __awaiter$4 = (undefined && undefined.__awaiter) || function (thisArg, _argu
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const logger$7 = new Logger(version$5);
+const logger$7 = new Logger(version$6);
 function resolveName(resolver, nameOrPromise) {
     return __awaiter$4(this, void 0, void 0, function* () {
         const name = yield nameOrPromise;
@@ -99215,16 +99215,16 @@ const Base58 = new BaseX("123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuv
 //console.log(Base58.decode("Qmd2V777o5XvJbYMeMb8k2nU5f8d3ciUQ5YpYuWhzv8iDj"))
 //console.log(Base58.encode(Base58.decode("Qmd2V777o5XvJbYMeMb8k2nU5f8d3ciUQ5YpYuWhzv8iDj")))
 
-const version$4 = "sha2/5.5.0";
+const version$5 = "sha2/5.5.0";
 
-new Logger(version$4);
+new Logger(version$5);
 function sha256(data) {
     return "0x" + (hash.sha256().update(arrayify(data)).digest("hex"));
 }
 
-const version$3 = "networks/5.5.2";
+const version$4 = "networks/5.5.2";
 
-const logger$6 = new Logger(version$3);
+const logger$6 = new Logger(version$4);
 function isRenetworkable(value) {
     return (value && typeof (value.renetwork) === "function");
 }
@@ -99461,7 +99461,7 @@ function encode$1(data) {
     return btoa(textData);
 }
 
-const version$2 = "web/5.5.1";
+const version$3 = "web/5.5.1";
 
 var __awaiter$3 = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -99520,7 +99520,7 @@ var __awaiter$2 = (undefined && undefined.__awaiter) || function (thisArg, _argu
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const logger$5 = new Logger(version$2);
+const logger$5 = new Logger(version$3);
 function staller(duration) {
     return new Promise((resolve) => {
         setTimeout(resolve, duration);
@@ -100076,9 +100076,9 @@ var bech32 = {
   fromWords: fromWords
 };
 
-const version$1 = "providers/5.5.3";
+const version$2 = "providers/5.5.3";
 
-const logger$4 = new Logger(version$1);
+const logger$4 = new Logger(version$2);
 class Formatter {
     constructor() {
         logger$4.checkNew(new.target, Formatter);
@@ -100495,7 +100495,7 @@ var __awaiter$1 = (undefined && undefined.__awaiter) || function (thisArg, _argu
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const logger$3 = new Logger(version$1);
+const logger$3 = new Logger(version$2);
 //////////////////////////////
 // Event Serializeing
 function checkTopic(topic) {
@@ -102223,7 +102223,7 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const logger$2 = new Logger(version$1);
+const logger$2 = new Logger(version$2);
 const errorGas = ["call", "estimateGas"];
 function checkError(method, error, params) {
     // Undo the "convenience" some nodes are attempting to prevent backwards
@@ -102790,7 +102790,7 @@ class JsonRpcProvider extends BaseProvider {
     }
 }
 
-const logger$1 = new Logger(version$1);
+const logger$1 = new Logger(version$2);
 let _nextId = 1;
 function buildWeb3LegacyFetcher(provider, sendFunc) {
     const fetcher = "Web3LegacyFetcher";
@@ -102917,9 +102917,9 @@ class Web3Provider extends JsonRpcProvider {
     }
 }
 
-const version = "units/5.5.0";
+const version$1 = "units/5.5.0";
 
-const logger = new Logger(version);
+const logger = new Logger(version$1);
 const names = [
     "wei",
     "kwei",
@@ -102950,6 +102950,10 @@ function parseUnits(value, unitName) {
     }
     return parseFixed(value, (unitName != null) ? unitName : 18);
 }
+
+const version = "ethers/5.5.4";
+
+new Logger(version);
 
 var testNetworks = {
     883: {
@@ -105164,6 +105168,71 @@ var useCBridge = function () {
             return [2 /*return*/, new Contract(contract, abi, signer)];
         });
     }); };
+    var getTokenContract = function (_a) {
+        var sourceChainId = _a.sourceChainId, tokenSymbol = _a.tokenSymbol;
+        return __awaiter$9(void 0, void 0, void 0, function () {
+            var tokenConfig;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, getToken(sourceChainId, tokenSymbol)];
+                    case 1:
+                        tokenConfig = _b.sent();
+                        return [4 /*yield*/, getContract(tokenConfig.address, ERC20.abi)];
+                    case 2: return [2 /*return*/, _b.sent()];
+                }
+            });
+        });
+    };
+    var getBridgeContract = function (request) { return __awaiter$9(void 0, void 0, void 0, function () {
+        var contract;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, getChainFromConfigs(request.sourceChainId)];
+                case 1:
+                    contract = ((_a.sent()) || {
+                        contract: "0x0",
+                    }).contract;
+                    return [2 /*return*/, getContract(contract, Bridge.abi)];
+            }
+        });
+    }); };
+    var isApproved = function (request) { return __awaiter$9(void 0, void 0, void 0, function () {
+        var token, contract, allowance;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, getTokenContract(request)];
+                case 1:
+                    token = _a.sent();
+                    return [4 /*yield*/, getChainFromConfigs(request.sourceChainId)];
+                case 2:
+                    contract = ((_a.sent()) || {
+                        contract: "0x0",
+                    }).contract;
+                    return [4 /*yield*/, token.allowance(request.userAddress, contract)];
+                case 3:
+                    allowance = _a.sent();
+                    return [2 /*return*/, allowance.gt(request.amount)];
+            }
+        });
+    }); };
+    var doApproval = function (request) { return __awaiter$9(void 0, void 0, void 0, function () {
+        var amount, token, contract;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    amount = BigNumber.from(2).pow(256).sub(1);
+                    return [4 /*yield*/, getTokenContract(request)];
+                case 1:
+                    token = _a.sent();
+                    return [4 /*yield*/, getChainFromConfigs(request.sourceChainId)];
+                case 2:
+                    contract = ((_a.sent()) || {
+                        contract: "0x0",
+                    }).contract;
+                    return [2 /*return*/, token.approve(contract, amount)];
+            }
+        });
+    }); };
     var rawAvailableAmountToTransfer = function (_a) {
         var sourceChainId = _a.sourceChainId, tokenSymbol = _a.tokenSymbol, userAddress = _a.userAddress;
         return __awaiter$9(void 0, void 0, void 0, function () {
@@ -105200,32 +105269,27 @@ var useCBridge = function () {
         var tokenConfig = _a.tokenConfig, amount = _a.amount;
         return parseUnits(amount.toString(), tokenConfig.decimals);
     };
-    var transferAmount = function (params) { return __awaiter$9(void 0, void 0, void 0, function () {
-        var tokenConfig, contract, bridge, _a, _b;
+    var transferAmount = function (request) { return __awaiter$9(void 0, void 0, void 0, function () {
+        var tokenConfig, bridge, _a, _b;
         return __generator(this, function (_c) {
             switch (_c.label) {
-                case 0: return [4 /*yield*/, getToken(params.sourceChainId, params.tokenSymbol)];
+                case 0: return [4 /*yield*/, getToken(request.sourceChainId, request.tokenSymbol)];
                 case 1:
                     tokenConfig = _c.sent();
-                    return [4 /*yield*/, getChainFromConfigs(params.sourceChainId)];
+                    return [4 /*yield*/, getBridgeContract(request)];
                 case 2:
-                    contract = ((_c.sent()) || {
-                        contract: "0x0",
-                    }).contract;
-                    return [4 /*yield*/, getContract(contract, Bridge.abi)];
-                case 3:
                     bridge = _c.sent();
-                    return [4 /*yield*/, ensureInChain(params.sourceChainId)];
-                case 4:
+                    return [4 /*yield*/, ensureInChain(request.sourceChainId)];
+                case 3:
                     _c.sent();
                     _b = (_a = bridge).send;
                     return [4 /*yield*/, getCurrentAccount()];
-                case 5:
+                case 4:
                     _b.apply(_a, [_c.sent(), tokenConfig.address,
-                        parseTokenBalance({ tokenConfig: tokenConfig, amount: params.amount }),
-                        params.destinationChainId,
+                        parseTokenBalance({ tokenConfig: tokenConfig, amount: request.amount }),
+                        request.destinationChainId,
                         new Date().getTime(),
-                        params.sourceChainId]);
+                        request.sourceChainId]);
                     return [2 /*return*/];
             }
         });
@@ -105237,6 +105301,8 @@ var useCBridge = function () {
         isInRightChain: isInRightChain,
         ensureInRightChain: ensureInRightChain,
         availableAmountToTransfer: availableAmountToTransfer,
+        isApproved: isApproved,
+        doApproval: doApproval,
     };
 };
 

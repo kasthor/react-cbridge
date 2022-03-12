@@ -8,7 +8,8 @@ const App = () => {
     transferAmount,
     transferConfigs,
     availableAmountToTransfer,
-    parseTokenBalance,
+    isApproved,
+    doApproval
   } = useCBridge();
   const [amount, setAmount] = useState(0);
   const [estimated, setEstimated] = useState(0);
@@ -51,6 +52,15 @@ const App = () => {
     console.log(amount);
   };
 
+  const handleApproved= async () => {
+    console.log( await isApproved(currentTransferSettings()) )
+  }
+
+  const handleApproval= async () => {
+    console.log( await doApproval(currentTransferSettings()) )
+  }
+
+
   return (
     <div>
       <input onChange={handleAmountChange} value={amount} />
@@ -59,9 +69,11 @@ const App = () => {
         <dt>Estimate</dt>
         <dd>{estimated}</dd>
       </dl>
-      <input type="submit" onClick={handleRequestConfig} />
-      <input type="submit" onClick={handleTransfer} />
-      <input type="submit" onClick={handleAvailableAmount} />
+      <input type="submit" onClick={handleRequestConfig} value="Request Configuration" />
+      <input type="submit" onClick={handleTransfer} value="Do Transfer"/>
+      <input type="submit" onClick={handleAvailableAmount} value="Available Amount"/>
+      <input type="submit" onClick={handleApproved} value = "Approved" />
+      <input type="submit" onClick={handleApproval} value = "Approval" />
     </div>
   );
 };

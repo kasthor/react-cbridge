@@ -188,6 +188,41 @@ export const useCBridge = () => {
     const signer = provider.getSigner();
     return new ethers.Contract(contract, abi, signer);
   };
+  const getTokenContract = async ({
+    sourceChainId,
+    tokenSymbol,
+  }: TransferRequest) => {
+    const tokenConfig = await getToken(sourceChainId, tokenSymbol);
+    return await getContract(tokenConfig.address, ERC20.abi);
+  };
+
+  const getBridgeContract = async (request: TransferRequest) => {
+    const { contract } = (await getChainFromConfigs(request.sourceChainId)) || {
+      contract: "0x0",
+    };
+
+    return getContract(contract, Bridge.abi);
+  };
+
+  const isApproved = async (request: TransferRequest): Promise<boolean> => {
+    const token = await getTokenContract(request);
+    const { contract } = (await getChainFromConfigs(request.sourceChainId)) || {
+      contract: "0x0",
+    };
+
+    const allowance = await token.allowance(request.userAddress, contract);
+
+    return allowance.gt(request.amount);
+  };
+
+  const doApproval = async (request: TransferRequest) => {
+    const amount = BigNumber.from(2).pow(256).sub(1);
+    const token = await getTokenContract(request);
+    const { contract } = (await getChainFromConfigs(request.sourceChainId)) || {
+      contract: "0x0",
+    };
+    return token.approve(contract, amount);
+  };
 
   const rawAvailableAmountToTransfer = async ({
     sourceChainId,
@@ -216,26 +251,22 @@ export const useCBridge = () => {
     amount: number;
   }): BigNumber => utils.parseUnits(amount.toString(), tokenConfig.decimals);
 
-  const transferAmount = async (params: TransferRequest) => {
+  const transferAmount = async (request: TransferRequest) => {
     const tokenConfig = await getToken(
-      params.sourceChainId,
-      params.tokenSymbol
+      request.sourceChainId,
+      request.tokenSymbol
     );
-    const { contract } = (await getChainFromConfigs(params.sourceChainId)) || {
-      contract: "0x0",
-    };
+    const bridge = await getBridgeContract(request);
 
-    const bridge = await getContract(contract, Bridge.abi);
-
-    await ensureInChain(params.sourceChainId);
+    await ensureInChain(request.sourceChainId);
 
     bridge.send(
       await getCurrentAccount(),
       tokenConfig.address,
-      parseTokenBalance({ tokenConfig, amount: params.amount }),
-      params.destinationChainId,
+      parseTokenBalance({ tokenConfig, amount: request.amount }),
+      request.destinationChainId,
       new Date().getTime(),
-      params.sourceChainId
+      request.sourceChainId
     );
   };
 
@@ -246,5 +277,7 @@ export const useCBridge = () => {
     isInRightChain,
     ensureInRightChain,
     availableAmountToTransfer,
+    isApproved,
+    doApproval,
   };
 };
